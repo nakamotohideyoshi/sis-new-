@@ -1,0 +1,99 @@
+----------------------------admissionsstatusforstudent
+LOAD DATA LOCAL INFILE '/var/www/html/sis/import/admissionsstatusforstudent.csv' INTO TABLE admissionsstatusforstudent
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(socialsecuritynumber, itemname, itemnamelong, itemstatus, itemstatuslong, comment, color, date, sortorder);
+
+----------------------------admissionsstudentitemstatus
+LOAD DATA LOCAL INFILE '/var/www/html/sis/import/admissionsstudentitemstatus.csv' INTO TABLE admissionsstudentitemstatus
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(itemname, itemnamelong, itemstatus, itemstatuslong, sortorder, color, archive);
+
+----------------------------admissionswebresponsefromstudent
+LOAD DATA LOCAL INFILE '/var/www/html/sis/import/admissionswebresponsefromstudent.csv' INTO TABLE admissionswebresponsefromstudent
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(itemname, questions, responsefromquestionpicked, extrainputboxneeded);
+
+----------------------------cordat1.csv
+LOAD DATA LOCAL INFILE '/var/www/html/sis/import/cordat1.csv' INTO TABLE cordat1
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n'
+IGNORE 0 LINES
+(SOCSECNUM, Password, Lastname, Firstname, Middlename, Address, PERCITY, PERSTATE, Zip, CURPHONE, CellPhone, SEX, BIRTHDATE, emailaddress, DriversLicenseNumber, ACTCOMPOSI, ACTENG, ACTMATH, ACTSOCSCI, ACTNATSCI, ACTREADING, READCOMP, GED);
+
+----------------------------cordat1p.csv
+LOAD DATA LOCAL INFILE '/var/www/html/sis/import/cordat1p.csv' INTO TABLE cordat1p
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n'
+IGNORE 0 LINES
+(SOCSECNUM, Password, Lastname, Firstname, Middlename, Address, PERCITY, PERSTATE, Zip, CURPHONE, CellPhone, SEX, BIRTHDATE, emailaddress, DriversLicenseNumber, ACTCOMPOSI, ACTENG, ACTMATH, ACTSOCSCI, ACTNATSCI, ACTREADING, READCOMP, GED);
+
+----------------------------cordat4.csv
+LOAD DATA LOCAL INFILE '/var/www/html/sis/import/cordat4.csv' INTO TABLE cordat4
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n'
+IGNORE 0 LINES
+(SOCSECNUM, DISCIPLINE, COURSENO, HOURSCRED, SECTION, Description, FACULTY, GRADE, GradeNum, Term, Year, DevelopmentCourse, Advisor, Transfer, College);
+
+----------------------------cordat4p
+LOAD DATA LOCAL INFILE '/var/www/html/sis/import/cordat4p.csv' INTO TABLE cordat4p
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n'
+IGNORE 0 LINES
+(SOCSECNUM, DISCIPLINE, COURSENO, HOURSCRED, SECTION, Description, FACULTY, GRADE, GradeNum, Term, Year, DevelopmentCourse, Advisor, Transfer, College);
+
+----------------------------corstud5and8.csv
+LOAD DATA LOCAL INFILE '/var/www/html/sis/import/corstud5and8.csv' INTO TABLE corstud5and8
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n'
+IGNORE 0 LINES
+(socsecnum, PAPDAY, Description, Charges, Payments);
+
+----------------------------studentscholarshipsreceived
+LOAD DATA LOCAL INFILE '/var/www/html/sis/import/studentscholarshipsreceived.csv' INTO TABLE studentscholarshipsreceived
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n'
+IGNORE 0 LINES
+(socsecnum, Year, nameofscholarship, dollarAmount, FallAmount, fallstatus, FallDate, SpringAmount, SpringDate, springstatus, SummerAmount, SummerDate, SummerStatus);
+
+----------------------------studentcostreceived
+LOAD DATA LOCAL INFILE '/var/www/html/sis/import/studentcostreceived.csv' INTO TABLE studentcostreceived
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n'
+IGNORE 0 LINES
+(socsecnum, Year, nameofcost, dollarAmount, Status, FallAmount, FallDate, SpringAmount, SpringDate, springstatus, SummerAmount, SummerDate, SummerStatus);
+
+----------------------------studentfinancialaiditemstatus
+LOAD DATA LOCAL INFILE '/var/www/html/sis/import/studentfinancialaidstatus.csv' INTO TABLE studentfinancialaidstatus
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n'
+IGNORE 0 LINES
+(socsecnum, year, itemname, itemnamelong, itemstatus, itemstatuslong, comment, color, date, nameofscholarship, dollaramount);
+
+----------------------------webresponse
+LOAD DATA LOCAL INFILE '/var/www/html/sis/import/webresponse.csv' INTO TABLE webresponse
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n'
+IGNORE 0 LINES
+(itemname, questions, responsefromquestionpicked, extrainputboxneeded);
+
+
+
+

@@ -1,0 +1,18 @@
+"ItemName","itemnamelong","ItemStatus","itemstatuslong","sortorder","Color","Archive"
+"Application","Application Status","Completed","Your application has been processed.",1.10,"Green",0
+"Application","Application Status","Incomplete","Oops! Something didn't look right. Please submit another application. Be sure to complete your Social Security number, birthdate, Graduation year, a dependable phone number and email address.",1.20,"Red",0
+"Application","Application Status","Please Call","I have some questions about your application. Please call the Director of Admissions, Chris Hughes, at 870-236-6901",1.30,"Yellow",0
+"Transcripts","Unofficial Transcripts Status","Completed","Thank you for sending your HS transcripts, shot records and ACT/SAT scores. They have been processed. Please remember to have an officical copy sent to us AFTER graduation.",1.40,"Green",0
+"Transcripts","Unofficial Transcripts Status","Web Response","You have to ask your counselor to send your transcripts, shot records and ACT scores. They can be scanned and emailed to the Director of Admissons, Chris Hughes, at chughes@crc.edu. They can also be mailed to 100 College Dr., Paragould, AR 72450",1.50,"Red",0
+"Accepted","Acceptance Status","Completed","Congratulations! You have been accepted to Crowley's Ridge College. A letter has been sent via email and regular mail to the addresses provided on your application.",1.60,"Green",0
+"FAFSA","FAFSA Status","Web Response","The FAFSA is the Free Application for Federal Student Aid. You can complete the FAFSA at https://www.fafsa.gov. You need to have it completed by July 14th, 2017.",1.70,"Red",0
+"FAFSA","FAFSA Status","Completed","Your FAFSA has been completed and processed. Please check the Financial Aid tab for more information and your award letter",1.80,"Green",0
+"Final Official Transcripts","Final Transcripts Status","Web Response","Final transcripts must be sealed, stamped and sent by your high school.",1.90,"Red",0
+"College/University Transcripts","Official collge/university transcripts Status","Web Response","Official copies of your transcripts need to be sent to CRC. You must send them from every college you have attended or from which you have received finanical aid. Please list all the colleges/universities that you have attended.",2.10,"Red",0
+"College/University Transcripts","Official college/university transcripts Status","Completed","Your Official college transcripts have been received and processed",2.20,"Green",0
+"Dual Enrolled transcript","Dual Enrolled Transcript Status","Web Response","Dual Enrollment or concurrent credit classes are college level classes taken during high school.",2.30,"Red",0
+"Dual Enrolled transcript","Dual Enrolled Transcript Status","Completed","Your transcript has been received and proccesed.",2.40,"Green",0
+"Dorm Fee","Dorm Fee","Completed","Your dorm fee has been processed and placed toward your account.",2.50,"Green",0
+"Final Official Transcripts","Final Transcipts Status","Completed","Your offiical high school transcript has been received.",1.91,"Green",0
+"Roommate","Roommate Preference","Web Response","If you know someone that you would like to room with, please let me know. If you don't know anyone, the Admissions department will do their best to room you with someone that you will get along with.",2.70,,0
+"Dorm Fee","Dorm Fee","Web Response","$100 non-refundable dorm fee that is part of your room/board.",2.60,"Red",0
