@@ -126,30 +126,40 @@ Class Database_model extends CI_Model {
 
 // Read data from database to show data in admin page
 	public function read_user_information($email) {
-
 		$condition = "emailaddress =" . "'" . $email . "'";
 		$this->db->select('*');
-		$this->db->from('cordat1');
+		$this->db->from('cordat1n');
 		$this->db->where($condition);
 		$this->db->limit(1);
 		$query = $this->db->get();
 			if ($query->num_rows() == 1) {
 				return $query->result();
-			} 
-			else {
+			}
+			else{
 				$condition = "emailaddress =" . "'" . $email . "'";
 				$this->db->select('*');
-				$this->db->from('cordat1p');
+				$this->db->from('cordat1');
 				$this->db->where($condition);
 				$this->db->limit(1);
 				$query = $this->db->get();
 					if ($query->num_rows() == 1) {
 						return $query->result();
+					} 
+					else {
+						$condition = "emailaddress =" . "'" . $email . "'";
+						$this->db->select('*');
+						$this->db->from('cordat1p');
+						$this->db->where($condition);
+						$this->db->limit(1);
+						$query = $this->db->get();
+							if ($query->num_rows() == 1) {
+								return $query->result();
+							}
+							else{
+								return false;
+							}
 					}
-					else{
-						return false;
-					}
-			}
+				}
 	}
 
 
