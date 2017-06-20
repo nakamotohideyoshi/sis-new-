@@ -64,6 +64,7 @@ $route['user/five'] = 'user_authentication/viewawardsandcharges';
 $route['user/five/(:any)'] = 'user_authentication/viewawardsandcharges1/$1';
 
 $route['user/six'] = 'user_authentication/viewfinancialaid';
+$route['user/six2'] = 'user_authentication/viewfinancialaid2';
 $route['user/adm'] = 'user_authentication/viewadmissionsatus';
 $route['user/admfix'] = 'user_authentication/viewadmissionfix';
 $route['user/admfix1/(:any)'] = "user_authentication/viewadmissionfix1/$1";
