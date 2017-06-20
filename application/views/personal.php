@@ -189,7 +189,7 @@ header("location: ".base_url());
 		
 		<div id="wrapper">
 			<div><b id="logout"><a href="logout">Logout</a></b></div>
-			<div><b id="logout"><a href="https://www.crc.edu/crc_alumni/alumni_form.html">Update Information</a></b></div>
+			<div><b id="logout"><a href="https://www.crc.edu/crc_alumni/alumni_form.html" target="_blank">Update Information</a></b></div>
 			<h1>Personal Information</h1>
 			<?php foreach ($personal as $personal_info): ?> 
 			 <h2><?php echo $personal_info['SOCSECNUM']; ?> </h2>
