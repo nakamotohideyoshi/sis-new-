@@ -15,6 +15,7 @@ header("location: ".base_url());
  <link href="<?php echo base_url(); ?>css/style.css" rel="stylesheet" type="text/css" />
 
  <link href="<?php echo base_url(); ?>css/financialaid.css" rel="stylesheet" type="text/css" />
+ 
  <style>
 .container {
        overflow: hidden;
@@ -155,44 +156,7 @@ header("location: ".base_url());
     display: block;
 }
 
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
 
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
 .container1 {
     overflow: hidden;
     background-color: rgba(0,0,0,0.42);
@@ -275,6 +239,7 @@ header("location: ".base_url());
 </head>
 
 <body>
+    
 
      <h4>Crowley's Ridge College</h4>
 		<div class="container">
@@ -415,9 +380,11 @@ header("location: ".base_url());
        
       <?php endforeach; ?>
  
- </div> 
+ </div>
+ 
 </body>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
 <script src="<?php echo base_url(); ?>js/jquery.tablesorter.min.js"></script>
 
     <script src="<?php echo base_url(); ?>js/index.js"></script>
@@ -462,7 +429,8 @@ window.onclick = function(e) {
       }
   }
 }
-</script>	
+</script>
+
 
 </body>
 </html>
