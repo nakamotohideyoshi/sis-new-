@@ -356,6 +356,24 @@ Class User_authentication extends CI_Controller {
               $this->load->view('financialaid', $data);
         }
 
+        public function viewfinancialaid2() {
+            if (isset($this->session->userdata['logged_in'])) {
+                $username = ($this->session->userdata['logged_in']['username']);
+                $email = ($this->session->userdata['logged_in']['email']);
+                $soc = ($this->session->userdata['logged_in']['soc']);
+            } 
+            else {
+                header("location: ".base_url());
+            }
+              $data['max_year'] = $this->awardsandcharges_model->get_fmaxyear($soc);
+              $data['year_lists'] = $this->awardsandcharges_model->get_fyearlists($soc);
+              $data['select_year'] = $data['max_year'][0]['Year'];
+              $this->session->set_userdata('select_year', $data['select_year']);               
+
+              $data['financialaids'] = $this->awardsandcharges_model->get_financialaid($soc, $data['max_year'][0]['Year']);
+              $this->load->view('financialaid1', $data);
+        }
+
 
 
 
@@ -557,10 +575,13 @@ Class User_authentication extends CI_Controller {
                         redirect ( base_url ('user/eleven/'.$this->session->userdata['web_response']['Questions']) );
                       
                     }
-                    else{            
+                    else{
+                    if($this->session->userdata['web_response']['ShowLoanAmount'] == "Yes" && $this->session->userdata['web_response']['ItemName'] != "AR Challenge"){
+
                         if ((float)$this->session->userdata['dollaramount'] - (float)$this->input->post('amount') <= 0.00){
                             redirect ( base_url ('user/eleven/'.$this->session->userdata['web_response']['Questions']) );
                         }
+                      }
                     }
 
             }   
@@ -575,6 +596,9 @@ Class User_authentication extends CI_Controller {
          
                $this->email->from($from_email, $data['personal'][0]['Firstname']." ".$data['personal'][0]['Lastname']); 
                $this->email->to('financialaid@crc.edu, '.$data['personal'][0]['emailaddress']);
+               //$this->email->to('nakamotoshi123@gmail.com, ljohnson@crc.edu ');
+
+               
                $this->email->subject($data['personal'][0]['Firstname'].' '.$data['personal'][0]['Lastname']); 
                $email_message = "------------------------------------------------------------";
                $email_message .= "\r\n";
@@ -586,11 +610,25 @@ Class User_authentication extends CI_Controller {
                $email_message .= "\r\n";
                $email_message .= "\r\n";
                $email_message .= $this->session->userdata['web_response']['Questions'];
+               $email_message .= "\r\n";
+               $email_message .= "\r\n";
                    if($this->session->userdata['web_response']['ExtraInputBoxNeeded'] == "Yes"){
-                        $email_message .= " Other Amount $".number_format((float)$this->input->post('amount'),2);
+                    if($this->session->userdata['web_response']['ShowLoanAmount'] == "Yes"){
+                          if ($this->session->userdata['web_response']['ItemName'] == "AR Challenge"){
+                            $email_message .= " Amount $".number_format((float)$this->input->post('amount'),2);
+                          }
+                          else{
+                            $email_message .= " Other Amount $".number_format((float)$this->input->post('amount'),2);
+                          }
+                      }
+                      else{
+                        $email_message .= " Amount $".number_format((float)$this->input->post('amount'),2);
+                      }
                    }
                    else{
+                    if($this->session->userdata['web_response']['ShowLoanAmount'] == "Yes"){
                         $email_message .= " Loan Amount $".number_format((float)$this->session->userdata['dollaramount'],2);
+                      }
                    }
                $email_message .= "\r\n";
                $email_message .= "\r\n";
@@ -618,7 +656,7 @@ Class User_authentication extends CI_Controller {
                                 'id' => ''
                                 );
                                   $this->session->unset_userdata('web_response', $sess_array);
-                                  redirect ( base_url ('user/six') );
+                                  redirect ( base_url ('user/six2') );
                             }
                         }
                         else {
@@ -629,7 +667,7 @@ Class User_authentication extends CI_Controller {
                                 'id' => ''
                                 );
                                   $this->session->unset_userdata('web_response', $sess_array);
-                                  redirect ( base_url ('user/six') );
+                                  redirect ( base_url ('user/six2') );
                             }
                         }         
                     }
