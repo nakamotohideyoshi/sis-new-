@@ -60,8 +60,8 @@ h1 {
   line-height: 1.7em;
   margin-bottom: 10px;
   text-align: center;
-  margin-top: 35px;
-  margin-bottom: 25px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 
@@ -71,7 +71,7 @@ h1 {
   width: 1000px;
   background: #fff;
   margin: 0 auto;
-  padding: 10px 17px;
+  padding: 10px 30px;
   padding-bottom: 40px;
   -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
   background-color: white;
@@ -171,8 +171,7 @@ h4 {
     display: flex;
 }
 .information {
-    width: 45%;
-   
+    width: 42%;
     /* margin-right: 3%; */
     /* float: left; */
     /* padding-right: 0%; */
@@ -248,23 +247,23 @@ h4 {
     text-align: center;
 }
 .fix_btn{
-	    background: url(../images/til_hm.gif) repeat-x;
-	    padding: 5px 10px;
-	    /* margin-left: 3px; */
-	    /* margin-right: 1px; */
-	    font: bold 20px Trebuchet MS;
-	    text-decoration: none;
-	    border-radius: 5px;
-	    text-align: center;
-	    color: green;
-	    /* margin: auto; */
+      background: url(../images/til_hm.gif) repeat-x;
+      padding: 2px 5px;
+      /* margin-left: 3px; */
+      /* margin-right: 1px; */
+      font: bold 15px Trebuchet MS;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+      color: green;
+      /* margin: auto; */
 }
 img{
-	width: 24px;
+  width: 17px;
 }
 .webresponse
 {
-	display: none;
+  display: none;
 }
 /* The Modal (background) */
 .modal {
@@ -317,7 +316,7 @@ img{
     color: black;
     padding-bottom: 10px;
     padding-top: 10px;
-    font: 20px Trebuchet MS;
+    font: 15px Trebuchet MS;
 }
 
 
@@ -325,12 +324,13 @@ img{
 .title {
     margin: 0 auto;
     text-align: center;
-    font: bold 23px Trebuchet MS;
+    font: bold 17px Trebuchet MS;
 }
 .response_wrapper {
     text-align: center;
     font-size: 20px;
     color: black;
+    line-height: 1;
 }
 input#amount {
     outline: black;

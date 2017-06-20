@@ -21,9 +21,11 @@ header("location: ".base_url());
  <style>
 .container {
        overflow: hidden;
-    background-color: #00abeb;
+   /* background-color: #00abeb; */
+    background-color: rgba(0,0,0,0.42);
+    background-image: -webkit-linear-gradient(rgba(51,51,51,0.7),rgba(0,0,0,0.7) 75%,rgba(0,0,0,0.7));
     font-family: Arial;
-    width: 950px;
+    width: 1050px;px;
     margin: 0 auto;
     
     border-radius: 5px;
@@ -33,6 +35,7 @@ header("location: ".base_url());
 }
 
 .container a {
+      border-radius: 7px;
       float: left;
     /* font-size: 25px; */
     font: bold 25px Trebuchet MS;
@@ -62,7 +65,9 @@ header("location: ".base_url());
 .container a:hover, .dropdown:hover .dropbtn {
     
     
+   border-radius: 7px;
     background-color: #f9db14;
+    
     color: green;
 }
 
@@ -71,7 +76,8 @@ header("location: ".base_url());
     
     font: bold 25px Trebuchet MS;
     position: absolute;
-    background-color: #00abeb;
+    background-color: rgba(0,0,0,0.8);
+        background-image: -webkit-linear-gradient(rgba(51,51,51,0.7),rgba(0,0,0,0.7) 75%,rgba(0,0,0,0.7));
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -135,17 +141,16 @@ header("location: ".base_url());
     cursor: pointer;
 }
 .container1 {
-    overflow: hidden;
+        overflow: hidden;
     background-color: rgba(0,0,0,0.42);
     background-image: -webkit-linear-gradient(rgba(51,51,51,0.7),rgba(0,0,0,0.7) 75%,rgba(0,0,0,0.7));
     font-family: Arial;
-    width:230px;
-    margin: 50px auto;
+    width: 230px;
+    margin: 10px auto;
     border-radius: 5px;
     font: bold 14px Trebuchet MS;
     padding-left: 20px;
     padding-right: 20px;
-    margin-bottom: 40px;
 }
 
 .container1 a {
@@ -212,6 +217,58 @@ header("location: ".base_url());
 .show {
     display: block;
 }
+.dropdown2 {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown2 .dropbtn2 {
+    cursor: pointer;
+      
+    border: none;
+    outline: none;
+    color: white;
+   
+    background-color: inherit;
+    font: bold 25px Trebuchet MS;
+    padding: 16px 16px;
+}
+
+.container a:hover, .dropdown2:hover .dropbtn2 {
+    
+    border-radius: 7px;
+    background-color: #f9db14;
+    color: green;
+}
+
+.dropdown-content2 {
+    display: none;
+    
+    font: bold 25px Trebuchet MS;
+    position: absolute;
+    background-color: #00abeb;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+        border: solid 1px;
+}
+
+.dropdown-content2 a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content2 a:hover {
+      background-color: #f9db14;
+     color: green;
+}
+.show {
+    display: block;
+}
 </style>
 </head>
 
@@ -249,17 +306,30 @@ header("location: ".base_url());
      <div><b id="logout"><a href="<?php echo base_url().'user'; ?>/logout">Logout</a></b></div>
 
      <div classs="information" style="
-    margin: 30px auto;
+    margin: 40px auto;
     text-align: center;
     font-size: 20px;
+    
+    margin-bottom: 0px;
 ">
       
-            <span><?php echo $information[0]['ItemNameLong'];?></span><br /><br />
+            <span><?php echo $information[0]['ItemNameLong'];?></span><br />
             <label>Year :</label>
-            <span><?php echo $information[0]['Year'];?></span><br /><br />
+            <span><?php echo $information[0]['Year'];?></span><br />
+            <?php  if (isset($this->session->userdata['web_response']) && $this->session->userdata['web_response']['ShowLoanAmount']=='Yes' && $information[0]['DollarAmount'] != null) {
+                            if ($this->session->userdata['web_response']['ItemName'] == "AR Challenge"){
+                            ?>
+                            <label>Amount :</label>
+                            <?php }
+                            else{
+                                ?>
+
+
             <label>Maximum Loan Amount :</label>
-            <span><?php echo $information[0]['DollarAmount'];?></span><br /><br />
-            <span><?php echo $information[0]['ItemStatusLong'];?></span><br /><br />
+            <?php } ?>
+            <span><?php echo $information[0]['DollarAmount'];?></span><br />
+            <?php } ?>
+            <span><?php echo $information[0]['ItemStatusLong'];?></span><br />
 
 
      </div>
@@ -293,19 +363,33 @@ header("location: ".base_url());
         <?php echo form_open( base_url().'user/ten'); ?>
 				
 				<div class="response_wrapper">
-					<div class="question">
+					<div class="question">              
+                       
+
 						<label>Response :</label>
-						<span><?php echo ($this->session->userdata['web_response']['Questions']);?></span><br /><br />
+						<span><?php echo ($this->session->userdata['web_response']['Questions']);?></span><br />
 					</div>
 					<div class="response">
 
 			 
 
-				<?php 
+				<?php               
     
         if($this->session->userdata['web_response']['ExtraInputBoxNeeded']=='Yes'){
+            if($this->session->userdata['web_response']['ShowLoanAmount']=='Yes'){
+                if ($this->session->userdata['web_response']['ItemName'] == 'AR Challenge'){
+                            
+            
 					?>
+                    <label> <?php echo ($this->session->userdata['web_response']['ResponseFromQuestionPicked']).'<br><br>'; ?></label>
+                    <?php }
+                    else{
+                        ?>
+                    
+
 					<label>	<?php echo ($this->session->userdata['web_response']['ResponseFromQuestionPicked']).' Amount value must less than $'.$this->session->userdata['dollaramount'].'<br><br>'; ?></label>
+                    <?php } } ?>                  
+
 					<input type="text" name="amount" id="amount" placeholder="$$$"/><br/><br />
 
 				<?php } 
@@ -335,6 +419,10 @@ function myFunction() {
 function myFunction1() {
     document.getElementById("myDropdown1").classList.toggle("show");
 }
+function myFunction2() {
+    document.getElementById("myDropdown2").classList.toggle("show");
+   
+}
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(e) {
@@ -347,6 +435,12 @@ window.onclick = function(e) {
   }
   if (!e.target.matches('.dropbtn1')) {
     var myDropdown = document.getElementById("myDropdown1");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+   if (!e.target.matches('.dropbtn2')) {
+    var myDropdown = document.getElementById("myDropdown2");
       if (myDropdown.classList.contains('show')) {
         myDropdown.classList.remove('show');
       }
